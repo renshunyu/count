@@ -1,0 +1,44 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Code stat plugin</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      统计选中代码的字符数，token数，行数.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      第一个版本.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- 添加自定义动作 -->
+    <action id="com.example.plugin.CharacterCountAction"
+            class="com.example.plugin.CharacterCountAction"
+            text="Code Stat"
+            description="Counts the number of words in the selected text.">
+
+      <!-- 定义动作的条件和约束 -->
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+
+      <!-- 定义动作的快捷键绑定 -->
+      <keyboard-shortcut keymap="$default" first-keystroke="alt W"/>
+    </action>
+  </actions>
+
+</idea-plugin>
